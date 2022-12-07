@@ -1,27 +1,34 @@
-football_team  = []
 
-#append 11 players 
+Football_team = []
+
+#append
 for i in range(11):
-    name = input("Add a player to the football team: ")
-    football_team.append(name)
-print(football_team)  
+    name = input("Add a player into the football team: ")
+    football_team.append(i)
+print(football_team)    
 
+#edit and delete
 repeat = 'Y'
-while repeat == 'Y' : 
-    edit = int(input("which player do you want to change?"))
-    football_team[edit-1] = input("Edit the new player: ")
+while repeat == 'Y':
+    print(football_team) #lines 13 and 14 identify the range of indexes
+    final_index = len(football_team) - 1
+    print("You can print any name from the list. Index numbers go from 0 to", final_index)
+    i = int(input('Which name do you want to change?: '))
+    while i >= len(football_team):
+        i = int(input("Enter the correct number: "))
+    football_team[i] = input("Enter a new name: ")
     print(football_team)
 
-    delete = int(input("which player do you want to delete?: "))
-    del football_team[delete-1]
+    #delete an item 
+    print("You can print any name from the list. Index numbers go from 0 to", final_index)
+    i = int(input('Which name do you want to delete?: '))
+    #validation 
+    while i >= len(football_team):
+        i = int(input("Enter a correct number: "))
+    del football_team[i]
     print(football_team)
+    repeat = input("Do you want to edit or delete names?(Y/N): ")     
 
-    repeat("do you want to edsit or delete the name (Y/N) ")
+    
 
-
-
-
-
-
- 
 
